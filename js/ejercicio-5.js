@@ -2,16 +2,41 @@
 // Sus propiedades son: nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura, año de nacimiento. Si quieres añadir alguna propiedad extra puedes hacerlo.
 // Los métodos que se debe poder utilizar  son:
 // mostrargeneration: este método debe mostrar un mensaje indicando a qué generación pertenece la persona creada y cual es el rasgo característico de esta generación.
+// esMayorDeEdad: indica si es mayor de edad, devuelve un mensaje indicando que la persona es mayor de edad.
+// mostrarDatos: devuelve toda la información del objeto.
+// generaDNI(): genera un número aleatorio de 8 cifras.
 
 class Person {
-  constructor(name, age, dni, gender, weight, height, yearBirth) {
+  constructor(name, age, gender, weight, height, yearBirth) {
     this.name = name;
     this.age = age;
-    this.dni = dni;
+    this.dni = this.generateDni();
     this.gender = gender;
     this.weight = weight;
     this.height = height;
     this.yearBirth = yearBirth;
+  }
+
+  olderAge() {
+    if (this.age >= 18) {
+      return `${this.name} es mayor de edad.`;
+    } else {
+      return `${this.name} no es mayor de edad.`;
+    }
+  }
+
+  showData() {
+    console.log(`Nombre: ${this.name}`);
+    console.log(`Edad: ${this.age}`);
+    console.log(`Dni: ${this.dni}`);
+    console.log(`Sexo: ${this.gender}`);
+    console.log(`Peso: ${this.weight}`);
+    console.log(`Altura: ${this.height}`);
+    console.log(`Año de Nacimiento: ${this.yearBirth}`);
+  }
+
+  generateDni() {
+    return Math.floor(Math.random() * (99999999 - 10000000 + 1) + 10000000);
   }
 
   showGeneration() {
@@ -50,10 +75,9 @@ class Person {
 
 // Ejemplo
 
-const person1 = new Person("Mateo", 20, "44021006", "H", 75, 1.8, 2002);
+const person1 = new Person("Mateo", 20, "H", "75kg", "1.8mts", 2002);
 
 person1.showGeneration();
-
-const person2 = new Person("Valeria", 39, "22464102", "M", 60, 1.65, 1990);
-
-person2.showGeneration();
+person1.olderAge();
+person1.showData();
+person1.generateDni();
