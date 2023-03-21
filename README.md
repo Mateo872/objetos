@@ -77,3 +77,7 @@ Para jugar, debés elegir una de las opciones disponibles (piedra, papel o tijer
 Si querés volver a jugar después de cada ronda, el juego te preguntará si querés volver a jugar. El juego continuará hasta que decidas no jugar más.
 
 El código es fácilmente configurable para permitir agregar más nombres de computadora y opciones de juego. También podés modificar el código para cambiar las reglas del juego.
+
+# Ejercicio de array
+
+Tabla dinámica con array y sus métodos.
